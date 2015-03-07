@@ -13,14 +13,14 @@ gulp.task('sass', function(){
 			errorHandler: notify.onError('Error: <%= error.message %>')
 		}))
 		.pipe(sass())
-		.pipe(gulp.dest('./prod/css'))
+		.pipe(gulp.dest('./public/css'))
     	.pipe(connect.reload());
 });
 
 //copy
 gulp.task('copy', function(){
 	gulp.src('./src/*.html')
-		.pipe(gulp.dest('./prod'))
+		.pipe(gulp.dest('./public'))
 		.pipe(connect.reload());
 });
 
@@ -33,7 +33,7 @@ gulp.task('watch', ['sass', 'copy'], function(){
 //server
 gulp.task('server', function(){
 	connect.server({
-		root: './prod',
+		root: './public',
 		livereload: true
 	});
 });

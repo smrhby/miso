@@ -1,3 +1,12 @@
+section {
+  @include outer-container;
+  aside { @include span-columns(3); }
+  article { @include span-columns(9); }
+  .test {
+  	@include span-columns(1);
+  	background-color: #eee;
+  }
+}
 //-------------------------------------//
 //  basic
 //-------------------------------------//
